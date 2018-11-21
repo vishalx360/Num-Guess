@@ -1,0 +1,20 @@
+{
+  "name": "Num-Guess",
+  "version": "1.0.0",
+  "description": "NumGuess is a simple Number Gussing game where computer chooses a RANDOM number from the given circle blocks in background and you have to guess the number, it is also a Progressive Web App made entirely from front-end Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishalx360/Num-Guess.git"
+  },
+  "keywords": [],
+  "author": "25267239+vishalx360@users.noreply.github.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishalx360/Num-Guess/issues"
+  },
+  "homepage": "https://github.com/vishalx360/Num-Guess#readme"
+}

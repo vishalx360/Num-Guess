@@ -1,0 +1,251 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html {
+    background: linear-gradient(122.03deg, #2D2430 -6.25%, #9222BC -6.24%, #2A36A1 100%);
+    font-family: 'Rancho';
+    height: 100%;
+}
+
+.nav {
+    position: relative;
+    margin: 0%;
+    height: 60px;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(122.03deg, #2D2430 -6.25%, #9222BC -6.24%, #2A36A1 100%);
+}
+
+#bar {
+
+    position: absolute;
+    top: 0%;
+    height: 60px;
+    width: 100%;
+    background: linear-gradient(122.03deg, #2D2430 -6.25%, #9222BC -6.24%, #2A36A1 100%);
+    mix-blend-mode: screen;
+}
+
+#tip {
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    padding-top: 10px;
+    border-radius: 0px 0px 10px 10px
+}
+
+#scorecard {
+    color: antiquewhite;
+    font-size: 1.8rem;
+    /* background-color: red; */
+    width: 80%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 3.5em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 4em
+}
+
+
+
+.circle {
+    margin: 0.2em;
+    border-radius: 50%;
+    width: 95px;
+    height: 95px;
+    background: rgba(245, 245, 245, 0.808);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+
+    animation: rotater 0.5s 1 0s linear, fade 0.5s 1 0s ease;
+
+}
+
+
+
+
+@keyframes rotater {
+    0% {}
+
+    50% {
+        transform: translateX(-10px) translateY(-10px);
+        transform: rotate(360deg);
+        -webkit-filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+        box-shadow: none;
+    }
+
+    100% {}
+}
+
+
+
+
+
+
+
+.circle:hover {
+    background: rgb(255, 255, 255);
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.text {
+    height: 55px;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 35%
+}
+
+#resultBanner {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    width: 100%;
+    background-color: rgba(250, 250, 250, 0.637);
+    justify-content: center;
+    animation: fade 0.5s 1 0s ease-in;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(xx);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+#resultCorrect,
+#resultWrong {
+
+    margin: auto;
+    margin-top: 10em;
+    height: 35%;
+    width: auto;
+    animation: new 0.2s 1 0s ease-out;
+}
+
+#resultCorrect {
+    display: none;
+}
+
+#resultWrong {
+    display: none;
+}
+
+@keyframes new {
+    0% {
+        transform: rotate(xx);
+        height: 90px;
+        opacity: 0;
+    }
+
+    50% {
+        transform: rotate(xx);
+        height: 550px;
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: rotate(xx);
+        height: 200px;
+        opacity: 1;
+    }
+}
+
+
+#card {
+    position: fixed;
+    display: none;
+    background: rgb(240, 240, 240);
+    height: 400x;
+    width: 300px;
+    color: rgb(51, 51, 51);
+    margin: auto;
+    margin-top: 24px;
+    border-radius: 20px;
+
+
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3) {
+    #card {
+        background: rgb(248, 248, 248);
+        height: 400px;
+        width: 280px;
+        margin-top: 24px;
+    }
+
+    .container {
+
+        top: 2em
+    }
+
+    #scorecard {
+        margin-top: 2.8em;
+    }
+
+    .circle {
+        width: 85px;
+        height: 85px;
+
+    }
+
+    #menu {
+        padding-bottom: 20px;
+        height: 200px;
+    }
+}
+
+
+#correctCard {
+    width: 20em;
+    width: 100%;
+    font-size: 2.1em;
+    background-color: rgba(0, 65, 5, 0.589);
+    position: absolute;
+    top: 60%;
+    color: rgb(255, 255, 255);
+    justify-content: center
+}
+
+.shadowfilter {
+    -webkit-filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, 0.80));
+    -webkit-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+
+}
+
+.shadowfilter:hover {
+    -webkit-filter: drop-shadow(0px 0px 8px rgba(208, 255, 0, 0.8));
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(registration => {
+          console.log(`Service Worker registered! Scope: ${registration.scope}`);
+        })
+        .catch(err => {
+          console.log(`Service Worker registration failed: ${err}`);
+        });
+    });
+  }
+</script>
+    <!-- ViewPort META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- importing FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+    <!-- importing CSS -->
+    <link href="styles/navbar.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <!-- additional meta -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#373737">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#fbfbfb">
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- og -->
+    <meta property="og:image:width" content="533">
+    <meta property="og:image:height" content="800">
+    <meta property="og:title" content="NumGuess">
+    <meta property="og:description" content="Simple Number Guessing game where computer chooses a RANDOM number from the given circle blocks in background and you have to guess the number, it is also a Progressive Web App made entirely from front-end Javascript.">
+    <meta property="og:url" content="https://num-guess.firebaseapp.com/">
+    <meta property="og:image" content="https://num-guess.firebaseapp.com/og/og-image.jpg">
+
+    <!-- ends -->
+    <title>NumGuess</title>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div id="bar">
+            <div style="text-align: center;">
+                <p style="margin-top:  10px;font-size: 32px">Number Guesser</p>
+            </div>
+    </nav>
+    <div role="navigation">
+        <div id="menuToggle">
+
+            <input id="x" type="checkbox" />
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu">
+
+                <a href="/">
+                    <li>Home</li>
+                </a>
+                <hr>
+                <a href="#">
+                    <li id="navButton-how">Game info</li>
+                </a>
+                <hr>
+                <a href="#">
+                    <li id="navButton-reset">Clear Score</li>
+                </a>
+                <hr>
+                <a target="_blank" href="https://github.com/vishalx360/Num-Guess">
+                    <li>Github -></li>
+                </a>
+            </ul>
+        </div>
+
+    </div>
+    </div>
+
+    <div id="tip">
+        <p style="
+             color:white;
+            padding-top:  10px;
+     font-size: 1.2rem
+        " id="tipText">Guess
+            the random
+            Number coosen by computer</p>
+    </div>
+
+    <div class="box">
+        <div class="container">
+            <div class="circle">
+                <p id="a" class="text">0</p>
+            </div>
+            <div class="circle">
+                <p id="b" class="text">0</p>
+            </div>
+            <div class="circle">
+                <p id="c" class="text">0</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="circle">
+                <p id="d" class="text">0</p>
+            </div>
+            <div class="circle">
+                <p id="e" class="text">0</p>
+            </div>
+            <div class="circle">
+                <p id="f" class="text">0</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="circle">
+                <p id="g" class="text">0</p>
+            </div>
+            <div class="circle">
+                <p id="h" class="text">0</p>
+            </div>
+            <div class="circle">
+                <p id="i" class="text">0</p>
+            </div>
+        </div>
+
+    </div>
+    <div id="scorecard">
+        <div id="logo">
+            <img style="height: 30px;animation: rotater 1s 1 0s linear , fade 2s 1 0s ease;" class="shadowfilter" src="images/favicon.png" />
+        </div>
+        <p style="margin-left: 5px" id="score">0</p>
+
+    </div>
+
+    <div class="test" id="resultBanner">
+
+
+        <img id="resultCorrect" src="images/tick.png" alt="">
+        <img id="resultWrong" src="images/cross.png" alt="">
+
+        <!-- show correct -->
+        <div id="correctCard" style="display:none">
+            <p>The Correct Answer was </p>
+            <p style="margin-left:3px" id="correctNumui"></p>
+        </div>
+
+
+        <div id="card">
+
+
+
+            <div id="cut" style="float: right;width: 2em">
+                <h1 style="justify-content: center;">X</h1>
+            </div>
+
+            <img style="
+            position: relative;
+            display: flex;
+            margin: auto;
+            margin-top: 20px; 
+            width: 100px;
+            "
+                src="images/icon-192.png" alt="">
+            <p style="padding: 20px;font-size: 1rem">NumGuess is a simple Number Gussing game where computer chooses
+                a RANDOM number from the given circle blocks in background and you have to guess the number, it is also
+                a Progressive Web App made entirely from front-end Javascript.</p>
+            <hr>
+            <div style="display: flex;">
+                <img src="images/vk.jpg" style="
+                justify-content: center;
+                height: 90px;
+                width: 88px;
+                margin-top: 20px;
+                margin-left: 20px;
+                border-radius: 50%;
+                ">
+                <p style="
+                justify-content: flex-end;
+                margin-top: 20px;
+                margin-left: 30px;
+                color: rgb(49, 49, 49)
+                ">Creator
+                    & Owner</p>
+
+            </div>
+            <p style="
+                position: relative;
+                top: -60px;
+                margin-left: 142px;
+                font-size: 1.4em">Vishal
+                Kumar</p>
+            <a href="https://github.com/vishalx360" style="
+                position: relative;
+                top: -60px;
+                margin-left: 142px;
+                font-size: 1.2em">Github</a>
+
+        </div>
+    </div>
+    <script src="index.js" async></script>
+</body>
+
+</html>
