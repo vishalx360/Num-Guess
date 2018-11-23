@@ -2,29 +2,13 @@
 <html lang="en">
 
 <head>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js')
-        .then(registration => {
-          console.log(`Service Worker registered! Scope: ${registration.scope}`);
-        })
-        .catch(err => {
-          console.log(`Service Worker registration failed: ${err}`);
-        });
-    });
-  }
-</script>
     <!-- ViewPort META -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- importing FONT -->
     <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
-    <!-- importing CSS -->
-    <link href="styles/navbar.css" rel="stylesheet">
-    <link href="styles/style.css" rel="stylesheet">
+
     <link rel="manifest" href="manifest.json">
     <!-- additional meta -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
@@ -41,7 +25,7 @@
     <meta property="og:title" content="NumGuess">
     <meta property="og:description" content="Simple Number Guessing game where computer chooses a RANDOM number from the given circle blocks in background and you have to guess the number, it is also a Progressive Web App made entirely from front-end Javascript.">
     <meta property="og:url" content="https://num-guess.firebaseapp.com/">
-    <meta property="og:image" content="https://num-guess.firebaseapp.com/og/og-image.jpg">
+    <meta property="og:image" content="https://vishalx360.github.io/Num-Guess/og/og-image.jpg">
 
     <!-- ends -->
     <title>NumGuess</title>
@@ -149,7 +133,7 @@
 
         <!-- show correct -->
         <div id="correctCard" style="display:none">
-            <p>The Correct Answer was </p>
+            <p>The Computer Guess was </p>
             <p style="margin-left:3px" id="correctNumui"></p>
         </div>
 
@@ -169,7 +153,7 @@
             margin-top: 20px; 
             width: 100px;
             "
-                src="images/icon-192.png" alt="">
+                src="icons/icon-192.png" alt="">
             <p style="padding: 20px;font-size: 1rem">NumGuess is a simple Number Gussing game where computer chooses
                 a RANDOM number from the given circle blocks in background and you have to guess the number, it is also
                 a Progressive Web App made entirely from front-end Javascript.</p>
@@ -206,7 +190,6 @@
 
         </div>
     </div>
-    <script src="index.js" async></script>
 </body>
 
 </html>
